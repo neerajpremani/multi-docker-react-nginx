@@ -4,7 +4,7 @@ services:
     postgres:
         image: 'postgres:latest'
         environment: 
-            - POSTGRES_PASSWORD=neeraj@0102
+            - POSTGRES_PASSWORD=neeraj0102
     redis:
         image: 'redis:latest'
     api:
@@ -19,9 +19,9 @@ services:
             - REDIS_HOST=redis
             - REDIS_PORT=6379
             - PGUSER=root
-            - PGHOST=localhost
+            - PGHOST=postgres
             - PGDATABASE=root
-            - PGPASSWORD=neeraj@0102
+            - PGPASSWORD=neeraj0102
             - PGPORT=5432
         depends_on: 
             - postgres
