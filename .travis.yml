@@ -3,23 +3,23 @@ services:
   - docker
 
 before_install:
-  - docker build -t neerajp/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t neerajpremani/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true neerajp/react-test npm test
+  - docker run -e CI=true neerajpremani/react-test npm test
 
 language: generic
 
 after_success:
-  - docker build -t neerajp/multi-client ./client
-  - docker build -t neerajp/multi-nginx ./nginx
-  - docker build -t neerajp/multi-server ./server
-  - docker build -t neerajp/multi-worker ./worker
+  - docker build -t neerajpremani/multi-client ./client
+  - docker build -t neerajpremani/multi-nginx ./nginx
+  - docker build -t neerajpremani/multi-server ./server
+  - docker build -t neerajpremani/multi-worker ./worker
   # Log in to the docker CLI new
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub (PUSH)
-  - docker push neerajp/multi-client
-  - docker push neerajp/multi-nginx
-  - docker push neerajp/multi-server
-  - docker push neerajp/multi-worker
+  - docker push neerajpremani/multi-client
+  - docker push neerajpremani/multi-nginx
+  - docker push neerajpremani/multi-server
+  - docker push neerajpremani/multi-worker
 
