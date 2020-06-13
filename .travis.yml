@@ -24,7 +24,7 @@ after_success:
   - docker push neerajpremani/multi-worker
 
 
-  deploy:
+deploy:
     edge: true
     provider: elasticbeanstalk
     region: us-east-1
